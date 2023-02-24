@@ -20,6 +20,13 @@ spec:
       containers:
       - name: redis-slave
         image: ibmcom/guestbook-redis-slave:v2
+        env:
+        - name: REDIS_MASTER_SERVICE_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              key: redis_pass
+              name: guestbook-config
+        args: ["--masterauth ", "$(REDIS_MASTER_SERVICE_PASSWORD)", "--slaveof", "redis-master", "6379"]
         ports:
         - name: redis-server
           containerPort: 6379
