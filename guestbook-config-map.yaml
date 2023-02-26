@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: guestbook-config
 data:
-  redis_pass: abc123
+  redis_pass: admin123

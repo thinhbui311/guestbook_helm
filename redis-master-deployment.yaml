@@ -24,8 +24,8 @@ spec:
         - name: REDIS_MASTER_SERVICE_PASSWORD
           valueFrom:
             configMapKeyRef:
-              key: redis_pass
               name: guestbook-config
+              key: redis_pass
         args: ["--requirepass", "$(REDIS_MASTER_SERVICE_PASSWORD)"]
         ports:
         - name: redis-server
