@@ -25,6 +25,6 @@ spec:
         env:
         - name: REDIS_MASTER_SERVICE_PASSWORD
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
+              name: guestbook-secret
               key: redis_pass
-              name: guestbook-config
