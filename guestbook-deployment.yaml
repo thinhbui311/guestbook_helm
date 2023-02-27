@@ -22,6 +22,11 @@ spec:
         ports:
         - name: http-server
           containerPort: 3000
+        resources:
+          limits:
+            cpu: 100m
+          # requests:
+          #   cpu: 200m
         env:
         - name: REDIS_MASTER_SERVICE_PASSWORD
           valueFrom:
